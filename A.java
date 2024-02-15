@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	System.out.println(a1.x);
 }
 }
-
+//use in different class name to run below command all in comments
 //whenever we create object non static member is loaded into object.
 //public class A {
 //int x = 20;
