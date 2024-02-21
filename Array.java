@@ -26,7 +26,7 @@ package java_1;
 //	}
 //}
 
-//ArrayIndexOutOfBoundsException resolves with the help try & catch block
+//ArrayIndexOutOfBoundsException resolves with the help of try & catch block
 public class Array {
 public static void main(String[] args) {
 	String[] names = new String[4];
