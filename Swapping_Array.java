@@ -17,11 +17,11 @@ public class Swapping_Array {
 		for (int x : arr) {
 			System.out.println(x);
 		}
-		System.out.println(arr[arr.length - 1]);
-		System.out.println(arr[arr.length - 2]);
+		System.out.println(arr[arr.length - 1]);// first max value of this sorted array
+		System.out.println(arr[arr.length - 2]);// second max value
 		
-		System.out.println(arr[0]);
-		System.out.println(arr[1]);
+		System.out.println(arr[0]);//first min value
+		System.out.println(arr[1]);//second min value
 	}
 
 }
