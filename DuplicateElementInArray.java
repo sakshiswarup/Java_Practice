@@ -5,7 +5,7 @@ public class DuplicateElementInArray {
 		int[] x = { 1, 1, 2, 2, 3, 3, 4, 5, 6 ,6 }; //we can also write int x[]={}
 		int[] temp = new int[x.length];
 		int j = 0;
-		for (int i = 0; i < x.length - 1; i++) {
+		for (int i = 0; i < x.length - 1; i++) {//i=0 to 6
 			if (x[i] != x[i + 1]) {
 				temp[j] = x[i];
 				j++;
