@@ -11,7 +11,7 @@ public class DuplicateElementInArray {
 				j++;
 			}
 		}
-		temp[j] = x[x.length - 1];
+		temp[j] = x[x.length - 1]; //here x[8-1]-->x[7] gives 5 so it goes to last index in j
 		for (int z : temp) {
 			System.out.println(z);
 		}
