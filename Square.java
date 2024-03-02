@@ -1,17 +1,17 @@
 package string_java;
 //star square
 
-//public class Square {
-//	public static void main(String[] args) {
-//		for(int i=0;i<5;i++) {
-//			for(int j=0;j<5;j++) {
-//				System.out.print("*");
-//			}
-//		System.out.print("\n");}
-//	}
-//}
-//
+public class Square {
+	public static void main(String[] args) {
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				System.out.print("*");
+			}
+		System.out.print("\n");}
+	}
+}
 
+//this is differet program copy and run in different package & class
 //triangle shape
 public class Square {
 	public static void main(String[] args) {
