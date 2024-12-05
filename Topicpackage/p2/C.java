@@ -1,14 +1,21 @@
-package Topicpackage.p2;
+package p2;
+//import static p1.A.id;
+//----
+//import static p1.A.x;
+//import static p1.A.y;
 
-import Topicpackage.p1.A; //here we have to import package to access different package.
-import Topicpackage.p1.*;//wildcard
-//public class C extends A {
-//
-//}
+import static p1.A.*;
+
 public class C {
-    public static void main(String[] args) {
-        A a1 = new A();
-        B b1 = new B();
-    }
-}
+//    public static void main(String[] args) {
+//        System.out.println(id);
+//    }
+    //-----
+//public static void main(String[] args) {
+//    System.out.println(x); //o/p 0
+//    System.out.println(y);  //o/p 0
+//}
+public static void main(String[] args) {
 
+}
+}
