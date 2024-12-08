@@ -1,5 +1,6 @@
 package privatep2;
-
+//Access Specifiers in java
+//private 
 //import privatep1.A;
 //
 //public class C extends A {
