@@ -2,8 +2,12 @@ package privatep1;
 
 //Access Specifiers in java
 //private- same class- yes
+
 //we cannot apply access specifiers in local variables , 
 //Access specifiers is applicable for static and non static members
+
+//if you make a variable or method to private then you can access that only in the same class but not outside class.
+
 //public class A {
 //private int x = 20;
 //private void test() {
