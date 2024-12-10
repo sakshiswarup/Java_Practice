@@ -1,5 +1,7 @@
 package defaultp1;
 //default Access Specifiers
+
+//If you make a variable or method to default then  you can access that inside same class & same package but not in outside package.
 //same class - yes
 //public class A {
 //	 int x= 10;
