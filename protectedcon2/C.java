@@ -10,3 +10,11 @@ public static void main(String[] args) {
 	//A a1 = new A();//error
 }
 }
+//--
+//when you make a constructor protected then that class can be inherited into same package & different package.
+public class C extends A {
+public static void main(String[] args) {
+ C c1 = new C();
+}
+}
+
