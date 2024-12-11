@@ -11,3 +11,14 @@ public static void main(String[] args) {
 	
 }
 }
+//--
+//when you make a constructor protected then that class can be inherited into same package & different package.
+public class A {
+protected A(){
+	System.out.println("A");
+}
+public static void main(String[] args) {
+	A a1 = new A();
+	
+}
+}
