@@ -7,3 +7,9 @@ public static void main(String[] args) {
 	A a1 = new A();
 }
 }
+//----
+public class B extends A {
+public static void main(String[] args) {
+	A a1 = new A();
+}
+}
