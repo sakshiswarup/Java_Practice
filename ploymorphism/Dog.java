@@ -1,16 +1,28 @@
 package ploymorphism;
 
-//Here we develop features such that it can take more than once form depending on the situation.
-//Overriding - it helps us to modify the logic of inherited method in child class.
-//note- for overriding firstly inheritance is mandatory.
-public class Dog {
-public void eat() {
-	System.out.println("Eating..");
-}
-public void walk() {
-	System.out.println("Walking..");
-}
-public void noise() {
-	System.out.println("Bow Bow...");
+public class Cat extends Dog {
+	@Override
+	public void noise(){
+		System.out.println("bowww...");
+	}
+public static void main(String[] args) {
+	Cat c1 =new Cat();
+	c1.eat();
+	c1.walk();
+	c1.noise();
 }
 }
+
+//@OverRidding annotation helps us to check Whether overriding is happening or not. if not then throw errors. 
+//public class Cat extends Dog {
+//	@Override
+//	//public void noise(){//error
+//		System.out.println("bowww...");
+//	}
+//public static void main(String[] args) {
+//	Cat c1 =new Cat();
+//	c1.eat();
+//	c1.walk();
+//	c1.noise();
+//}
+//}
