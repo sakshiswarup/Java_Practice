@@ -18,3 +18,18 @@ public static void main(String[] args) {
 	}
 	}
 }
+
+//list()
+//It will fetch all file names in the given path and return's String array.
+
+public class F2{
+	public static void main(String[] args) {
+		File f = new File("G:\\hello\\");
+		String []names=f.list() ;
+		for(String name:names) {
+			System.out.println(name);
+			
+		}
+		System.out.println(names.length);//count no of files
+	}
+}
