@@ -28,5 +28,18 @@ public class I2 implements I1{
 	
 }
 
+//3
+//public class I2 extends I1{
+//	public static void main(String[] args) {
+//		I2.test();//converted to I1.test();
+//		System.out.println(I2.x);//it will converted to I1.x.
+//	}
+//}
+
+//4
+public interface I2 extends I1{
+	public void test2();
+}
+
 
 
