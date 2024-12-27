@@ -10,9 +10,8 @@ public void test() {// we cannot override final method (error)
 //public class F1 extends F{//error
 //}
 
-Interface Continuation
-Object of interface cannot be created.
-Every variable in an interface by default final & static.
+//Interface Continuation
+//Object of interface cannot be created.Every variable in an interface by default final & static.
 public interface F1{
 	int MAX =100;
 	int MIN=0;//even if i don't write final and static it will be final nd static(bold)
