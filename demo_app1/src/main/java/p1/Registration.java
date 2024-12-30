@@ -27,14 +27,16 @@ public class Registration extends HttpServlet {
 		String y = request.getParameter("email");
 		String z = request.getParameter("mobile");
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");//Class.forName() this static method locate the driver class file.
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","root","test");
 			Statement stmnt = con.createStatement();
 			stmnt.executeUpdate("insert into registration values('"+x+"','"+y+"','"+z+"')");
-			
+			con.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+		
+			
+	
 }

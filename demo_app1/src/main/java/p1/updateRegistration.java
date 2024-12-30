@@ -35,6 +35,7 @@ public class updateRegistration extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","root","test");
 			Statement stmnt = con.createStatement();
 			stmnt.executeUpdate("update registration set mobile = '"+mobile+"' where email='"+email+"'");
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
