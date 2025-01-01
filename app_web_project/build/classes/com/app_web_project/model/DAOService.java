@@ -41,7 +41,36 @@ public class DAOService {
 		try {
 			stmnt.executeUpdate("insert into student values('"+name+"','"+email+"','"+mobile+"')");
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
+
+	public ResultSet getAllStudents() {
+		try {
+			ResultSet result = stmnt.executeQuery("select * from student");
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void deleteStudentInfo(String email) {
+		try {
+			stmnt.executeUpdate("delete from student where email='"+email+"'");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void updateRegistration(String email, String mobile) {
+		try {
+			stmnt.executeUpdate("update student set mobile='"+mobile+"' where email='"+email+"'");
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		
+	}
+  
 }
