@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app_web_project.model.DAOService;
 
@@ -35,6 +36,11 @@ public class LoginController extends HttpServlet {
 		
 		boolean status = service.verifyLogin(email, password);
 		if(status) {
+			//session object
+			HttpSession session = request.getSession(true);
+			session.setAttribute("email", email);
+			//sessionTimeout
+			session.setMaxInactiveInterval(10);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/student_registration.jsp");
 			rd.forward(request, response);
 		}else {
