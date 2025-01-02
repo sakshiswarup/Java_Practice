@@ -2,7 +2,7 @@ package com.app_web_project.model;
 
 import java.sql.*;
 
-//DAO Service= Data access object service ,are responsible to perform database operations
+//DAO Service= (Data access object service) ,are responsible to perform database operations
 public class DAOService {
 
 	private Connection con;
@@ -10,19 +10,13 @@ public class DAOService {
 	
 	public void ConnectDB() {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","root","test");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/app_project_db","root","test");
 			stmnt =con.createStatement();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-	}
-	public void closeConnection() {
-		try {
-			con.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	public boolean verifyLogin(String email, String password) {
@@ -35,4 +29,50 @@ public class DAOService {
 		return false;
 	}
 	
+	public void closeConnection() {
+		try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void addStudent(String name, String email,String mobile) {
+		try {
+			stmnt.executeUpdate("insert into student values('"+name+"','"+email+"','"+mobile+"')");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public ResultSet getAllStudents() {
+		try {
+			ResultSet result = stmnt.executeQuery("select * from student");
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+
+	public void deleteStudentInfo(String email) {
+		try {
+			stmnt.executeUpdate("delete from student where email='"+email+"'");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	public void updateRegistration(String email, String mobile) {
+		try {
+			stmnt.executeUpdate("update student set mobile='"+mobile+"' where email='"+email+"'");
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		
+	}
+  
 }
