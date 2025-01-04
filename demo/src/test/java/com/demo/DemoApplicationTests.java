@@ -1,40 +1,37 @@
 package com.demo;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.demo.entity.Student;
-import com.demo.repository.StudentRepository;
+import com.demo.service.StudentService;
 
 @SpringBootTest
 class DemoApplicationTests {
 	@Autowired
-	private StudentRepository repository;
+	private StudentService service;
+	
 	
 	@Test
-	void saveStudent() {
+	public void createStudentRegistration() {
 		Student s = new Student();
 		s.setId(1L);
 		s.setName("mike");
 		s.setEmail("mike@gmail.com");
-		s.setMobile("9295776639");
-		repository.save(s);	
-	}
-	@Test
-	void deleteStudent(){
-		repository.deleteById(1L);
-	}
-	
-	@Test
-	void updateStudent() {
-		Student s = new Student();
-		s.setId(1L);
-		s.setName("stallin");
-		s.setEmail("stallin@gmail.com");
-		s.setMobile("9595776639");
-		repository.save(s);	
-	
+		s.setMobile("9632629033");
+		Student student = service.createStudent(s);
+		
+		assertEquals(s.getId(),student.getId());
+		assertEquals(s.getName(),student.getName());
+		assertEquals(s.getEmail(),student.getEmail());
+		System.out.println(student.getMobile());
+		assertEquals(s.getMobile(),student.getMobile());
 	}
 
+	
+	
 }
