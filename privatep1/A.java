@@ -8,17 +8,17 @@ package privatep1;
 
 //if you make a variable or method to private then you can access that only in the same class but not outside class.
 
-//public class A {
-//private int x = 20;
-//private void test() {
-//	  System.out.println("from test");
-//}
-//public static void main(String[] args) {
-//	  A a1 = new A();
-//	  System.out.println(a1.x);
-//	  a1.test();
-//}
-//}
+public class A {
+private int x = 20;
+private void test() {
+	  System.out.println("from test");
+}
+public static void main(String[] args) {
+	  A a1 = new A();
+	  System.out.println(a1.x);
+	  a1.test();
+}
+}
 //private - same package sub class- no
 
 //public class A{
