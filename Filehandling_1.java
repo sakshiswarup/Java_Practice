@@ -8,18 +8,18 @@ import java.io.File;
 //import java.io.File;
 //import java.io.IOException;
 //
-//public class FIlehandling_1 {
-//
-//	public static void main(String[] args) {
-//		File f = new File("G://hello//B.txt");
-//		try {
-//			boolean val = f.createNewFile();
-//			System.out.println(val);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//}
+public class FIlehandling_1 {
+
+	public static void main(String[] args) {
+		File f = new File("G://hello//B.txt");
+		try {
+			boolean val = f.createNewFile();
+			System.out.println(val);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
 
 //mkdir()-it will create new folder is folder is not present in given path and it will return true.
 //if folder exists return false
