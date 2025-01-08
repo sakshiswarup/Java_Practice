@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +25,7 @@ class DemoApplicationTests {
 		s.setId(3L);
 		s.setName("stallin");
 		s.setEmail("stallin@gmail.com");
-		s.setMobile("9632629033");
+		s.setMobile("9632629010");
 		Student student = service.createStudent(s);
 		
 		assertEquals(s.getId(),student.getId());
@@ -38,7 +39,7 @@ class DemoApplicationTests {
    void deleteStudent() {
 	   //J unit testing 
 	 // boolean actualValue = service.deleteStudentById(10L);
-	   boolean actualValue = service.deleteStudentById(1L);
+	   boolean actualValue = service.deleteStudentById(3L);
 	  boolean expectedValue = false;
 	  assertEquals(expectedValue, actualValue);
 	  
@@ -71,4 +72,69 @@ class DemoApplicationTests {
 		  System.out.println(s.getMobile());
 	  }
    }
-}
+	
+   @Test
+   void getStudentByEmail() {
+	  Student student = service.getStudentByEmail(); 
+	  System.out.println(student.getEmail());
+	  System.out.println(student.getName());
+	  System.out.println(student.getMobile());
+	  System.out.println(student.getId());
+   }
+   
+  @Test
+   void getStudentByMobile() {
+		Student student=service.getStudentByMobile();
+		System.out.println(student.getEmail());
+		System.out.println(student.getName());
+		System.out.println(student.getMobile());
+		System.out.println(student.getId());
+		
+			}
+    @Test
+    void getStudentByEmailAndMobile() {
+    	Student student = service.getStudentByEmailAndMobile();
+    	System.out.println(student.getEmail());
+		System.out.println(student.getName());
+		System.out.println(student.getMobile());
+		System.out.println(student.getId());
+    }
+			
+   @Test
+   void getByEmailOrMobile() {
+	   Iterable<Student> allRecords = service.getByEmailOrMobile();
+	   for(Student s:allRecords) {
+		      System.out.println(s.getId());
+			  System.out.println(s.getName());
+			  System.out.println(s.getEmail());
+			  System.out.println(s.getMobile());
+	   }
+   }
+   
+   @Test
+   void searchStudentByEmail() {
+	   Student student = service.searchStudentByEmail();
+	   System.out.println(student.getEmail());
+	   System.out.println(student.getName());
+	   System.out.println(student.getMobile());
+	   System.out.println(student.getId());
+   }
+   
+   @Test
+   void searchStudentByMobile() {
+	   Student student = service.searchStudentByMobile();
+	   System.out.println(student.getEmail());
+	   System.out.println(student.getName());
+	   System.out.println(student.getMobile());
+	   System.out.println(student.getId());
+   }
+   
+   @Test
+   void searchStudentByEmailAndMobile() {
+   	Student student = service.searchStudentByEmailAndMobile();
+   	    System.out.println(student.getEmail());
+		System.out.println(student.getName());
+		System.out.println(student.getMobile());
+		System.out.println(student.getId());
+   }
+	}
