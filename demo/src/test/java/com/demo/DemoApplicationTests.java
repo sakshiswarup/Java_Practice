@@ -3,7 +3,9 @@ package com.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.junit.jupiter.api.Test;
@@ -89,8 +91,9 @@ class DemoApplicationTests {
 		System.out.println(student.getName());
 		System.out.println(student.getMobile());
 		System.out.println(student.getId());
-		
-			}
+	}
+  
+  
     @Test
     void getStudentByEmailAndMobile() {
     	Student student = service.getStudentByEmailAndMobile();
@@ -109,7 +112,7 @@ class DemoApplicationTests {
 			  System.out.println(s.getEmail());
 			  System.out.println(s.getMobile());
 	   }
-   }
+   } 
    
    @Test
    void searchStudentByEmail() {
@@ -128,6 +131,7 @@ class DemoApplicationTests {
 	   System.out.println(student.getMobile());
 	   System.out.println(student.getId());
    }
+
    
    @Test
    void searchStudentByEmailAndMobile() {
@@ -137,4 +141,51 @@ class DemoApplicationTests {
 		System.out.println(student.getMobile());
 		System.out.println(student.getId());
    }
-	}
+   
+   @Test
+   void searchByEmailOrMobile() {
+	   //List<Student> allRecords=service.searchStudentByEmailOrMobile();
+	   Set<Student> allRecords=service.searchStudentByEmailOrMobile();
+	   for(Student s : allRecords) {
+		   System.out.println(s.getId()); 
+			System.out.println(s.getName());
+			System.out.println(s.getMobile());
+			
+	   }
+   }
+   //Entity Manager concept added with jpql 
+   @Test
+   void searchByEntityOption() {
+	   Student student = service.findByEmail();
+	   System.out.println(student.getName());
+	   System.out.println(student.getEmail());
+   }
+
+
+  @Test
+   void searchByOptionMobile() {
+	  Student student=service.findByMobile();
+	  System.out.println(student.getName());
+	  System.out.println(student.getId());
+	  System.out.println(student.getMobile());
+  
+ }
+  @Test
+  void searchByOptionEmailAndMobile() {
+	  Student student = service.findByEmailAndMobile();
+	  System.out.println(student.getMobile());
+	  System.out.println(student.getName());
+	  System.out.println(student.getEmail());
+	  System.out.println(student.getId());
+  }
+  @Test
+  void searchByOptionEmailOrMobile() {
+	  List<Student> allRecords = service.findByEmailOrMobile();
+	  for(Student s:allRecords) {
+		  System.out.println(s.getName());
+		  System.out.println(s.getId());
+		  System.out.println(s.getEmail());
+		  System.out.println(s.getMobile());
+	  }
+  }
+}
