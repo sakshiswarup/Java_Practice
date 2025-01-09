@@ -30,4 +30,10 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	
 	@Query("select x from Student x where x.email=:email and x.mobile=:mobile")
 	Student searchByEmailAndMobile(@Param("email")String email, @Param("mobile")String mobile);
+
+	@Query("select x from Student x where x.email=:email or x.mobile=:mobile")
+	//List is the below code return type
+	// List<Student> searchByEmailOrMobile(@Param("email") String email,@Param("mobile") String mobile);
+	//Set is the return type, List can have duplicate values but set cannot.
+	Set<Student> searchByEmailOrMobile(@Param("email") String email,@Param("mobile") String mobile);
 }
