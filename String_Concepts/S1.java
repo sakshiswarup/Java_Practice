@@ -1,30 +1,31 @@
 package String_Concepts;
 
-//public class S1 {
-// public static void main(String[] args) {
-//	String x1 = "mike";
-//	String x2 ="mike";
-//	System.out.println(x1==x2);//o/p true
-//}
-//}
+//String concepts
+public class S1 {
+public static void main(String[] args) {
+	String x1 = "mike";
+	String x2 ="mike";
+	System.out.println(x1==x2);//o/p true
+}
+}
 
-//public class S1{
-//	public static void main(String[] args) {
-//		String x1 = new String("mike");
-//		String x2= new String("mike");
-//		System.out.println(x1==x2);//false
-//	}
-//	
-//}
+public class S1{
+	public static void main(String[] args) {
+		String x1 = new String("mike");
+		String x2= new String("mike");
+		System.out.println(x1==x2);//false
+	}
+	
+}
 
-//public class S1{
-//	public static void main(String[] args) {
-//		String x1="mike";
-//		String x2 =new String("mike");
-//		System.out.println(x1==x2);//false (different address)
-//		System.out.println(x1.equals(x2));//true(values are same)
-//	}
-//}
+public class S1{
+	public static void main(String[] args) {
+		String x1="mike";
+		String x2 =new String("mike");
+		System.out.println(x1==x2);//false (different address)
+		System.out.println(x1.equals(x2));//true(values are same)
+	}
+}
 
 //intern()= with the help of this added a string to the pool explicitly
 //public class S1{
