@@ -1,34 +1,34 @@
 package String_Concepts;
 //isBlank() -introduced in java 11
 // it always gives blank to true & isempty() because one space is there so it will give false
-//public class S0 {
-//public static void main(String[] args) {
-//	String x1 = " ";
-//	System.out.println(x1.isBlank());//true
-//	System.out.println(x1.isEmpty());//false
-//	System.out.println(x1.length());//1
-//}
-//}
+public class S0 {
+public static void main(String[] args) {
+	String x1 = " ";
+	System.out.println(x1.isBlank());//true
+	System.out.println(x1.isEmpty());//false
+	System.out.println(x1.length());//1
+}
+}
 
-//public class S0{
-//	public static void main(String[] args) {
-//		String x1="";
-//		System.out.println(x1.isBlank());//true
-//		System.out.println(x1.isEmpty());//true
-//	}
-//}
+public class S0{
+	public static void main(String[] args) {
+		String x1="";
+		System.out.println(x1.isBlank());//true
+		System.out.println(x1.isEmpty());//true
+	}
+}
 
 //.equalsIgnoreCase()
-//public class S0{
-//	public static void main(String[] args) {
-//		String x1="mike";
-//		String x2="mike";
-//		String x3="Mike";
-//		System.out.println(x1.equals(x2));//true
-//		System.out.println(x1.equals(x3));//false
-//		System.out.println(x2.equalsIgnoreCase(x3));//true
-//	}
-//}
+public class S0{
+	public static void main(String[] args) {
+		String x1="mike";
+		String x2="mike";
+		String x3="Mike";
+		System.out.println(x1.equals(x2));//true
+		System.out.println(x1.equals(x3));//false
+		System.out.println(x2.equalsIgnoreCase(x3));//true
+	}
+}
 
 //Word Comparing
 //public class S0{
