@@ -29,3 +29,16 @@ public class S2{
 		System.out.println(count);
 	}
 }
+
+//convert primitive data type to string
+
+public class S2{
+	public static void main(String[] args) {
+		int x =10;
+		String y =""+x;
+		System.out.println(y);
+		float z = 10.5f;
+		String s =""+z;
+		System.out.println(s);
+	}
+}
