@@ -1,5 +1,5 @@
 package com.webdemo.dto;
-//data transfer object
+//Dto = data transfer object
 public class RegistrationDto {
 private String name;
 private String emailId;
