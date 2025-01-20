@@ -34,14 +34,17 @@ public class RegistrationController {
 //			@RequestParam String emailId,
 //			@RequestParam String mobile,
 			//third way
+			
 			RegistrationDto registrationDto,
 			Model model
+			
 			) {
 		Registration registration = new Registration();
+		//in second way to use but here we use dto approch
 //		registration.setName(name);
 //		registration.setEmailId(emailId);
 //		registration.setMobile(mobile);
-		
+		//in third way
 		registration.setName(registrationDto.getName());
 		registration.setEmailId(registrationDto.getEmailId());
 		registration.setMobile(registrationDto.getMobile());
@@ -54,11 +57,12 @@ public class RegistrationController {
 		model.addAttribute("msg","Record is saved");
 		return "registration";
 	}
+	
 	@RequestMapping("/allRegistration")
 	public String getRegistrations(Model model){
 		List<Registration>registration=registrationService.getRegistrations();
 		model.addAttribute("registrationd",registration);
 		return "list_registration";
 	}
-	
 }
+
