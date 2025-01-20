@@ -19,6 +19,7 @@ private RegistrationRepository registrationRepository;
 
 	public List<Registration> getRegistrations() {
 		List<Registration> registrations = registrationRepository.findAll();
+		//findAll( return type is iterable(in crud repository) but here we use jpa repository so return type is List
 		return registrations;
 	}
 
