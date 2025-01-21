@@ -61,7 +61,7 @@ public class RegistrationController {
 	@RequestMapping("/allRegistration")
 	public String getRegistrations(Model model){
 		List<Registration>registration=registrationService.getRegistrations();
-		model.addAttribute("registrationd",registration);
+		model.addAttribute("registrations",registration);
 		return "list_registration";
 	}
 }
