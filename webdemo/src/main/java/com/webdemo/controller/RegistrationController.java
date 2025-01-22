@@ -64,5 +64,38 @@ public class RegistrationController {
 		model.addAttribute("registrations",registration);
 		return "list_registration";
 	}
+	
+	@RequestMapping("/deleteReg")
+	public String deleteRegistration(
+			@RequestParam long id,
+			Model model
+			) {
+		registrationService.deleteRegistration(id);
+		List<Registration>registration=registrationService.getRegistrations();
+		model.addAttribute("registrations",registration);
+		return "list_registration";
+	}
+	
+	@RequestMapping("/getRegById")
+	public String getRegistrationById(
+			@RequestParam long id,
+		    Model model
+			) {
+		Registration registration = registrationService.getRegistration(id);
+		model.addAttribute("registration", registration);
+		return "update_registration";
+	}
+	
+	@RequestMapping("/updateReg")
+	public String updateRegistration(
+			RegistrationDto dto,
+			Model model
+			) {
+		registrationService.updateRegistration(dto);
+		List<Registration>registration=registrationService.getRegistrations();
+		model.addAttribute("registrations",registration);
+		return "list_registration";
+
+	}
 }
 
