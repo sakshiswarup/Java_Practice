@@ -2,6 +2,13 @@ package com.webdemo.dto;
 //Dto = data transfer object
 //it is class only to create read data and here object of data cannot go to database only entity class to go to database
 public class RegistrationDto {
+private long id;	
+public long getId() {
+	return id;
+}
+public void setId(long id) {
+	this.id = id;
+}
 private String name;
 private String emailId;
 private String mobile;
