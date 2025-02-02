@@ -38,3 +38,20 @@ public class A{
 		}
 	}
 }
+
+//Give me those employee who's name start with m
+public class A{
+	public static void main(String[] args) {
+		List<Employee> data = Arrays.asList(
+				new Employee(1,"mike",2000),
+				new Employee(2,"stallin",5000),
+				new Employee(3,"mona",7000)
+				);
+		List<Employee> newData = data.stream().filter(e->e.getName().startsWith("m")).collect(Collectors.toList());
+		for(Employee e:newData) {
+			System.out.println(e.getId());
+			System.out.println(e.getName());
+			System.out.println(e.getSalary());
+		}
+	}
+}
