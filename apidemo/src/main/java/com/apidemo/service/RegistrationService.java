@@ -4,6 +4,9 @@ import com.apidemo.exception.ResourceNotFound;
 import com.apidemo.payload.RegistrationDto;
 import com.apidemo.repository.RegistrationRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -64,21 +67,31 @@ public class RegistrationService {
         }
     }
 
-    public List<RegistrationDto> getAllRegisrtration() {
-        List<Registration> registrations = registrationRepository.findAll();
+    public List<RegistrationDto> getAllRegisrtration(
+            int pageNo, int pageSize,
+            String sortBy, String sortDir) {
+        Sort sort = sortDir.equals("asc") ? Sort.by(Sort.Order.asc(sortBy)): Sort.by(Sort.Order.desc(sortBy));
+
+        PageRequest page = PageRequest.of(pageNo, pageSize, sort);
+        Page<Registration> all = registrationRepository.findAll(page);
+        List<Registration> registrations = all.getContent();
+
+        System.out.println(page.getPageNumber());
+        System.out.println(page.getPageSize());
+        System.out.println(all.getTotalPages());
+        System.out.println(all.isLast());
+        System.out.println(all.isFirst());
+
+
+        // List<Registration> registrations = registrationRepository.findAll();
         return  registrations.stream().map((element) -> modelMapper.map(element, RegistrationDto.class)).collect(Collectors.toList());
         // return registrations;
     }
 
     public Registration getRegistrationById(long id){
-        Registration reg =null;
-       try {
-          reg= registrationRepository.findById(id).orElseThrow(
-                   ()->new ResourceNotFound("Record not found")
-           );
-       }catch (ResourceNotFound r){
-           System.out.println("exception found");
-       }
+        Registration reg = registrationRepository.findById(id).orElseThrow(
+                ()-> new ResourceNotFound("Could not found")
+        );
         return reg;
     }
 }
