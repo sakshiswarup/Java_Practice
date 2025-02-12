@@ -51,9 +51,18 @@ public class RegistrationController {
 
     //for all records
     //http://localhost:8080/api/v1/register
+    //http://localhost:8080/api/v1/register?pageNo0&pageSize=3
+   // http://localhost:8080/api/v1/register?pageNo0&pageSize=3&sortBy=title //title ex like name, mobiler5
+    //http://localhost:8080/api/v1/register?pageNo0&pageSize=5&sortBy=name&sortDir=asc
     @GetMapping
-    public ResponseEntity<List<RegistrationDto>> getAllRegisrtration() {
-        List<RegistrationDto> registrations = registrationService.getAllRegisrtration();
+    public ResponseEntity<List<RegistrationDto>> getAllRegisrtration(
+
+          @RequestParam(name="pageNo",required = false,defaultValue = "0")  int pageNo,
+          @RequestParam(name="pageSize",required = false,defaultValue = "3")  int pageSize,
+          @RequestParam(name="sortBy",required = false,defaultValue = "id") String sortBy,
+          @RequestParam(name="sortDir",required = false,defaultValue="asc") String sortDir
+    ) {
+        List<RegistrationDto> registrations = registrationService.getAllRegisrtration(pageNo,pageSize,sortBy,sortDir);
         return new ResponseEntity<> (registrations,HttpStatus.OK);
     }
 
