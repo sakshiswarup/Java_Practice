@@ -1,8 +1,10 @@
 package com.apidemo.controller;
 import com.apidemo.entity.Registration;
 import com.apidemo.payload.RegistrationDto;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,10 +22,14 @@ public class RegistrationController {
 
 
     @PostMapping
-    public ResponseEntity<RegistrationDto> createRegistration(
+    public ResponseEntity<?> createRegistration(
             //http://localhost:8080/api/v1/register
-            @RequestBody RegistrationDto registrationDto
+           @Valid @RequestBody RegistrationDto registrationDto,
+            BindingResult result
     ) {
+        if(result.hasErrors()){
+            return ResponseEntity.badRequest().body(result.getAllErrors());
+        }
         RegistrationDto registration = registrationService.createRegistration(registrationDto);
         //  return "Registration successful with ID: " + registration.getId();
         return  ResponseEntity.status(HttpStatus.CREATED).header("Custom-Header","Value")
